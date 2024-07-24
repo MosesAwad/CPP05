@@ -5,7 +5,21 @@
 #include <iostream>
 #include <string>
 #include <exception>
-#include "Bureaucrat.hpp"
+
+/*
+	This is known as a Forward Declaration.
+
+	In Form.hpp, only a forward declaration of Bureaucrat is used because
+	the Form class only needs to reference Bureaucrat as a type. The same
+	applies to Bureaucrat.hpp with Form.
+
+	Otherwise, doing include "Form.hpp" in Bureaucrat.hpp and doing
+	include "Bureaucrat.hpp" in Form.hpp would result in the following
+	error:
+		In included file: main file cannot be included recursively when
+		building a preamble
+*/
+class Bureaucrat;
 
 class Form
 {

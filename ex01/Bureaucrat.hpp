@@ -6,6 +6,21 @@
 #include <iostream>
 #include <string>
 
+/*
+	This is known as a Forward Declaration.
+	
+	In Bureaucrat.hpp, only a forward declaration of Form is used because
+	the Form class only needs to reference Bureaucrat as a type. The same
+	applies to Form.hpp with Bureaucrat.
+
+	Otherwise, doing include "Form.hpp" in Bureaucrat.hpp and doing
+	include "Bureaucrat.hpp" in Form.hpp would result in the following
+	error:
+		In included file: main file cannot be included recursively when
+		building a preamble
+*/
+class Form;
+
 class Bureaucrat
 {
 	private:
@@ -23,6 +38,7 @@ class Bureaucrat
 		const int& 			getGrade() const;
 		void				incrementGrade();
 		void				decrementGrade();
+		void				signForm(Form& form);
 };
 
 class Bureaucrat::GradeTooHighException : public std::exception
