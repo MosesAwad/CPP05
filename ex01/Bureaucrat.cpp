@@ -18,33 +18,11 @@ Bureaucrat::Bureaucrat() : name("default"), grade(150)
 	std::cout << "Bureaucrat default constructor called\n" << std::endl;
 }
 
-Bureaucrat::Bureaucrat(const std::string name, int grade) : name(name), grade(grade)
-{
-	if (grade < 1)
-		throw(GradeTooHighException());
-	if (grade > 150)
-		throw(GradeTooLowException());
-	std::cout << "Bureaucrat constructor called\n" << std::endl;
-}
-
 Bureaucrat::Bureaucrat(const Bureaucrat& other) : name(other.name)
 {
 	*this = other;
 }
 
-/*
-	In here, I cast const std::string to just std::string
-	on the name attribute as follows:
-		(std::string) this->name = other.name;
-	but this is just to shut the compiler up. It, however,
-	has no effect on the name. No matter what you do, the
-	name attribute can never be reassigned so yes, the following
-	line:
-		(std::string) this->name = other.name;
-	is effecitvely useless, it's just a formality.
-
-	Check Main 3 to see the difference.
-*/
 Bureaucrat& Bureaucrat::operator=(const Bureaucrat& other)
 {
 	if (this != &other)
@@ -53,6 +31,15 @@ Bureaucrat& Bureaucrat::operator=(const Bureaucrat& other)
 		this->grade = other.grade;
 	}
 	return (*this);
+}
+
+Bureaucrat::Bureaucrat(const std::string name, int grade) : name(name), grade(grade)
+{
+	if (grade < 1)
+		throw(GradeTooHighException());
+	if (grade > 150)
+		throw(GradeTooLowException());
+	std::cout << "Bureaucrat constructor called\n" << std::endl;
 }
 
 const std::string&	Bureaucrat::getName() const
