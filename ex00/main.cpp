@@ -15,7 +15,7 @@ int main()
 		}
 		catch (std::exception& e)
 		{
-			std::cout << e.what() << std::endl;
+			std::cerr << e.what() << std::endl;
 		}
 
 
@@ -30,7 +30,7 @@ int main()
 		}
 		catch (std::exception& e)
 		{
-			std::cout << e.what() << std::endl;
+			std::cerr << e.what() << std::endl;
 		}
 		std::cout << "Grade did not change -> " << Moosa << std::endl;
 		std::cout << "\n";
@@ -50,7 +50,7 @@ int main()
 		}
 		catch (std::exception& e)
 		{
-			std::cout << e.what() << std::endl;
+			std::cerr << e.what() << std::endl;
 		}
 
 		std::cout << "Now -> " << Moosa << std::endl;
@@ -63,7 +63,7 @@ int main()
 		}
 		catch (std::exception& e)
 		{
-			std::cout << e.what() << std::endl;
+			std::cerr << e.what() << std::endl;
 		}
 		std::cout << "Grade did not change -> " << Moosa << std::endl;
 		std::cout << "\n";

@@ -7,12 +7,12 @@
 
 const char* Form::GradeTooHighException::what() const throw()
 {
-	return ("Form grade issue: too high");
+	return ("grade is too high");
 }
 
 const char* Form::GradeTooLowException::what() const throw()
 {
-	return ("Form grade issue: too low");
+	return ("grade is too low");
 }
 
 Form::Form() : name("default"), isSigned(false), reqSignGrade(150), reqExcGrade(150)

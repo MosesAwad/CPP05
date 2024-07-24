@@ -23,7 +23,7 @@ int main()
 		}
 		catch (std::exception& e)
 		{
-			std::cout << "🚨 Cannot sign grade 🚨 -> " << e.what() << std::endl;
+			std::cerr << "🚨 Cannot sign grade 🚨 -> " << e.what() << std::endl;
 		}
 
 		std::cout << "\n\t-----------------------" << std::endl;
@@ -40,7 +40,7 @@ int main()
 		}
 		catch (std::exception& e)
 		{
-			std::cout << "🚨 Cannot sign grade 🚨 -> " << e.what() << std::endl;
+			std::cerr << "🚨 Cannot sign grade 🚨 -> " << e.what() << std::endl;
 		}
 
 		std::cout << "\n";
@@ -75,5 +75,18 @@ int main()
 		std::cout << MOR << std::endl;
 	}
 
+	std::cout << "\n\n---------------- MAIN 3 ----------------\n" << std::endl;
+	{
+		try 
+		{
+			Form MOR("Magistrate Office Refurbishing", 151, 132);
+			std::cout << MOR << std::endl;
+		} 
+		catch (std::exception& e) 
+		{
+			std::cerr << "Unable to create form because " << e.what() << std::endl;
+		}
+		std::cout << "\n";
+	}
 	return (0);
 }
