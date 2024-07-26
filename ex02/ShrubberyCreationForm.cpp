@@ -26,20 +26,20 @@ const char*	ShrubberyCreationForm::UnsignedFormException::what() const throw()
 	the ShrubberyCreationForm class directly using the parent (AForm) class's
 	constructor as shown below.
 */
-ShrubberyCreationForm::ShrubberyCreationForm() : AForm("Default", 145, 137),
+ShrubberyCreationForm::ShrubberyCreationForm() : AForm("Shrubbery Creation Form", 145, 137),
 													target("Default")
 {
 	std::cout << "ShrubberyCreationForm Default constructor called" << std::endl;
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(const std::string target) : AForm("Shrubbery Creation", 145, 137), 
+ShrubberyCreationForm::ShrubberyCreationForm(const std::string target) : AForm("Shrubbery Creation Form", 145, 137), 
 																			target(target)
 {
 																			
 	std::cout << "ShrubberyCreationForm constructor called" << std::endl;
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& other) : AForm("Shrubbery Creation", 145, 137)
+ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& other) : AForm("Shrubbery Creation From", 145, 137)
 {
 	*this = other;
 }
