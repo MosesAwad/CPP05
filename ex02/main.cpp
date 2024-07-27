@@ -90,14 +90,27 @@ int main()
 
 		Tokugawa.executeForm(Pardon);
 		std::cout << "\n";
-
 		Tokugawa.signForm(Pardon);
+		std::cout << "\n";
 
 		std::cout << "\n\t---------------------------------------" << std::endl;
+		std::cout << "\t| Promoting Tokugawa Ieyasu to Daimyo |" << std::endl;
+		std::cout << "\t---------------------------------------\n" << std::endl;
+
+		for (int i = 28; i >= 25; i--) {
+			Tokugawa.incrementGrade();
+		}
+
+		Tokugawa.signForm(Pardon);
+		std::cout << "\n";
+
+		Tokugawa.executeForm(Pardon);
+
+		std::cout << "\n\n\t---------------------------------------" << std::endl;
 		std::cout << "\t| Promoting Tokugawa Ieyasu to Shogun |" << std::endl;
 		std::cout << "\t---------------------------------------\n" << std::endl;
 
-		for (int i = 28; i >= 5; i--) {
+		for (int i = 25; i >= 5; i--) {
 			Tokugawa.incrementGrade();
 		}
 
