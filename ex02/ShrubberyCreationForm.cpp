@@ -11,7 +11,7 @@ const char*	ShrubberyCreationForm::InvalidFileException::what() const throw()
 
 const char*	ShrubberyCreationForm::UnsignedFormException::what() const throw()
 {
-	return ("Cannot execute an unsigned form");
+	return ("Unable to execute an unsigned form");
 }
 
 /*
@@ -71,7 +71,7 @@ void	ShrubberyCreationForm::execute(const Bureaucrat& executor) const
 	if (executor.getGrade() > this->getReqExcGrade())
 		throw(AForm::GradeTooLowException());
 	
-	std::ofstream tree_file(target + "_shrubbery");
+	std::ofstream tree_file((target + "_shrubbery").c_str());
 	if (!tree_file.is_open())
 		throw(ShrubberyCreationForm::InvalidFileException());
 

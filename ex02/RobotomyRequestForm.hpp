@@ -3,7 +3,8 @@
 # define ROBOTOMYREQUESTFORM_HPP
 
 #include "AForm.hpp"
-#include <ctime>
+#include <cstdlib> // for srand() and rand()
+#include <ctime> // for time()
 
 class RobotomyRequestForm : public AForm
 {

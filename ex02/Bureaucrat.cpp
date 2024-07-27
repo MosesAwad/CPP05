@@ -13,6 +13,11 @@ const char* Bureaucrat::GradeTooLowException::what() const throw()
 	return ("Cannot decrement grade: too low!");
 };
 
+const char* Bureaucrat::UnsignedFormException::what() const throw()
+{
+	return ("Unable to execute an unsigned form");
+}
+
 Bureaucrat::Bureaucrat() : name("default"), grade(150)
 {
 	std::cout << "Bureaucrat default constructor called\n" << std::endl;
@@ -84,6 +89,28 @@ void	Bureaucrat::signForm(AForm& AForm)
 	catch (std::exception& e)
 	{
 	 	std::cerr << "🚨 " << this->getName() << " couldn't sign " << AForm.getName() << " because " << e.what() << " 🚨" << std::endl;
+	}
+}
+
+void	Bureaucrat::executeForm(const AForm& form)
+{
+	try
+	{
+		if (!form.getIsSigned())
+		{
+			std::cerr << "🚨 " << this->getName() << " couldn't execute " << form.getName() << " --> ";
+			throw(Bureaucrat::UnsignedFormException());
+		}
+		if (this->getGrade() > form.getReqExcGrade())
+		{
+			std::cerr << "🚨 " << this->getName() << " couldn't execute " << form.getName() << " --> ";
+			throw(AForm::GradeTooLowException());
+		}
+		std::cout << this->getName() << " executed " << form.getName();
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
 	}
 }
 

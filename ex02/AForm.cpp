@@ -17,7 +17,7 @@ const char* AForm::GradeTooLowException::what() const throw()
 
 AForm::AForm() : name("default"), isSigned(false), reqSignGrade(150), reqExcGrade(150)
 {
-	std::cout << "Form default constructor called" << std::endl;
+	std::cout << "AForm default constructor called" << std::endl;
 }
 
 AForm::AForm(const std::string name, 
@@ -33,7 +33,7 @@ AForm::AForm(const std::string name,
 	if (req_sign_grade < 1 || req_exc_grade < 1)
 		throw (GradeTooHighException());
 
-	std::cout << "Form constructor called" << std::endl;
+	std::cout << "AForm constructor called" << std::endl;
 }
 
 AForm::AForm(const AForm& other) : name(other.name),
@@ -75,7 +75,7 @@ AForm& AForm::operator=(const AForm& other)
 
 AForm::~AForm()
 {
-	std::cout << "Form destructor called" << std::endl;
+	std::cout << "AForm destructor called" << std::endl;
 }
 
 const std::string&	AForm::getName() const

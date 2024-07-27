@@ -5,7 +5,7 @@
 
 const char* RobotomyRequestForm::UnsignedFormException::what() const throw()
 {
-	return ("Cannot execute an unsigned form");
+	return ("Unable to execute an unsigned form");
 }
 
 RobotomyRequestForm::RobotomyRequestForm() : AForm("Robotomy Request Form", 72, 45), 

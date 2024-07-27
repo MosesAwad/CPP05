@@ -3,6 +3,7 @@
 #include "AForm.hpp"
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 #include <exception>
 
 int main()
@@ -78,6 +79,34 @@ int main()
 		{
 			std::cerr << e.what() << std::endl;
 		}
+		std::cout << "\n";
+		std::cout << "\n";
+	}
+
+	std::cout << "\n---------------- MAIN 3 ----------------\n" << std::endl;
+	{
+		PresidentialPardonForm Pardon("Ishida Mitsunari");
+		Bureaucrat Tokugawa("Tokugawa Ieyasu", 28);
+
+		Tokugawa.executeForm(Pardon);
+		std::cout << "\n";
+
+		Tokugawa.signForm(Pardon);
+
+		std::cout << "\n\t---------------------------------------" << std::endl;
+		std::cout << "\t| Promoting Tokugawa Ieyasu to Shogun |" << std::endl;
+		std::cout << "\t---------------------------------------\n" << std::endl;
+
+		for (int i = 28; i >= 5; i--) {
+			Tokugawa.incrementGrade();
+		}
+
+		Tokugawa.signForm(Pardon);
+
+		std::cout << "\n";
+
+		Tokugawa.executeForm(Pardon);
+
 		std::cout << "\n";
 		std::cout << "\n";
 	}

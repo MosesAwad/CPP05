@@ -4,7 +4,7 @@
 
 const char* PresidentialPardonForm::UnsignedFormException::what() const throw()
 {
-	return ("Cannot execute an unsigned form");
+	return ("Unable to execute an unsigned form");
 }
 
 PresidentialPardonForm::PresidentialPardonForm() : AForm("Presidential Pardon Form", 25, 5),
@@ -42,5 +42,5 @@ void	PresidentialPardonForm::execute(const Bureaucrat& executor) const
 		throw(PresidentialPardonForm::UnsignedFormException());
 	if (executor.getGrade() > this->getReqExcGrade())
 		throw(AForm::GradeTooLowException());
-	std::cout << this->target << " has been pardoned by Zaphod Beeblebrox" << std::endl;
+	std::cout << this->target << " has been pardoned by Tokugawa Ieyasu" << std::endl;
 }
