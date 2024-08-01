@@ -15,7 +15,7 @@ int main()
 		}
 		catch (std::exception& e)
 		{
-			std::cerr << e.what() << std::endl;
+			std::cerr << "Increment attempt error: " << e.what() << std::endl;
 		}
 
 
@@ -30,7 +30,7 @@ int main()
 		}
 		catch (std::exception& e)
 		{
-			std::cerr << e.what() << std::endl;
+			std::cerr << "Increment attempt error: " << e.what() << std::endl;
 		}
 		std::cout << "Grade did not change -> " << Moosa << std::endl;
 		std::cout << "\n";
@@ -50,7 +50,7 @@ int main()
 		}
 		catch (std::exception& e)
 		{
-			std::cerr << e.what() << std::endl;
+			std::cerr << "Decrement attempt error: " << e.what() << std::endl;
 		}
 
 		std::cout << "Now -> " << Moosa << std::endl;
@@ -63,7 +63,7 @@ int main()
 		}
 		catch (std::exception& e)
 		{
-			std::cerr << e.what() << std::endl;
+			std::cerr << "Decrement attempt error: " << e.what() << std::endl;
 		}
 		std::cout << "Grade did not change -> " << Moosa << std::endl;
 		std::cout << "\n";
@@ -82,6 +82,18 @@ int main()
 		Bureaucrat Hanzaemon(Carlito);
 		std::cout << "Logistics of Hanzaemon (in Carlito form) 🏯 -> " << Hanzaemon << std::endl;
 		std::cout << "\n";
+	}
+
+	std::cout << "\n--------- MAIN 4 ---------" << std::endl;
+	{
+		try 
+		{
+			Bureaucrat Carlito("Carlito", -23);
+		}
+		catch (std::exception &e)
+		{
+			std::cout << "Constructor attempt error: " << e.what() << std::endl;
+		}
 	}
 	return (0);
 }
