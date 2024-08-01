@@ -29,9 +29,9 @@ Form::Form(const std::string name,
 			  reqExcGrade(req_exc_grade)
 {
 	if (req_sign_grade > 150 || req_exc_grade > 150)
-		throw (GradeTooLowException());
+		throw (Form::GradeTooLowException());
 	if (req_sign_grade < 1 || req_exc_grade < 1)
-		throw (GradeTooHighException());
+		throw (Form::GradeTooHighException());
 
 	std::cout << "Form constructor called" << std::endl;
 }
@@ -103,7 +103,7 @@ void	Form::beSigned(const Bureaucrat& bureaucrat)
 	if (this->reqSignGrade >= bureaucrat.getGrade())
 		this->isSigned = true;
 	else
-	 	throw(GradeTooLowException());
+	 	throw(Form::GradeTooLowException());
 }
 
 std::ostream& operator<<(std::ostream& o, const Form& object)

@@ -23,7 +23,7 @@ int main()
 		}
 		catch (std::exception& e)
 		{
-			std::cerr << "🚨 Cannot sign grade 🚨 -> " << e.what() << std::endl;
+			std::cerr << "🚨 Cannot sign 🚨 -> " << e.what() << std::endl;
 		}
 
 		std::cout << "\n\t-----------------------" << std::endl;
@@ -48,34 +48,6 @@ int main()
 	}
 
 	std::cout << "\n\n---------------- MAIN 2 ----------------\n" << std::endl;
-	{
-		Form MOR("Magistrate Office Refurbishing", 126, 132);
-		std::cout << "\n";
-
-		std::cout << MOR << std::endl;
-
-		Bureaucrat Hanzaemon("Hanzaemon", 128);
-
-		std::cout << MOR << std::endl;
-		std::cout << "⏳ Hanzaemon attempts to sign the form and sanction the decision ⌛" << std::endl;
-
-		Hanzaemon.signForm(MOR);
-	
-		std::cout << "\n\t-----------------------" << std::endl;
-		std::cout << "\t| Promoting Hanzaemon |" << std::endl;
-		std::cout << "\t-----------------------\n" << std::endl;
-		Hanzaemon.incrementGrade();
-		Hanzaemon.incrementGrade();
-
-		std::cout << "⏳ Hanzaemon attempts to sign the form and sanction the decision ⌛" << std::endl;
-
-		Hanzaemon.signForm(MOR);
-
-		std::cout << "\n";
-		std::cout << MOR << std::endl;
-	}
-
-	std::cout << "\n\n---------------- MAIN 3 ----------------\n" << std::endl;
 	{
 		try 
 		{

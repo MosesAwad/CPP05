@@ -36,9 +36,9 @@ Bureaucrat& Bureaucrat::operator=(const Bureaucrat& other)
 Bureaucrat::Bureaucrat(const std::string name, int grade) : name(name), grade(grade)
 {
 	if (grade < 1)
-		throw(GradeTooHighException());
+		throw(Bureaucrat::GradeTooHighException());
 	if (grade > 150)
-		throw(GradeTooLowException());
+		throw(Bureaucrat::GradeTooLowException());
 	std::cout << "Bureaucrat constructor called\n" << std::endl;
 }
 
@@ -60,8 +60,8 @@ const int&	Bureaucrat::getGrade() const
 
 void Bureaucrat::incrementGrade()
 {
-	if (this->grade - 1 < 1)
-		throw (GradeTooHighException());
+	if ((this->grade - 1) < 1)
+		throw (Bureaucrat::GradeTooHighException());
 	else
 		this->grade--;
 }
@@ -69,7 +69,7 @@ void Bureaucrat::incrementGrade()
 void Bureaucrat::decrementGrade()
 {
 	if ((this->grade + 1) > 150)
-		throw (GradeTooLowException());
+		throw (Bureaucrat::GradeTooLowException());
 	else
 		this->grade++;
 }

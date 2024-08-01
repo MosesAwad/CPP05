@@ -88,7 +88,7 @@ int main()
 	{
 		try 
 		{
-			Bureaucrat Carlito("Carlito", -23);
+			Bureaucrat Carlito("Carlito", -284);
 		}
 		catch (std::exception &e)
 		{

@@ -103,7 +103,7 @@ void	AForm::beSigned(const Bureaucrat& bureaucrat)
 	if (this->reqSignGrade >= bureaucrat.getGrade())
 		this->isSigned = true;
 	else
-	 	throw(GradeTooLowException());
+	 	throw(AForm::GradeTooLowException());
 }
 
 std::ostream& operator<<(std::ostream& o, const AForm& object)
