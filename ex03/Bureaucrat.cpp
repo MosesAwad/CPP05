@@ -5,12 +5,12 @@
 
 const char* Bureaucrat::GradeTooHighException::what() const throw()
 {
-	return ("Cannot increment grade: too high!");
+	return ("grade too high!");
 };
 
 const char* Bureaucrat::GradeTooLowException::what() const throw()
 {
-	return ("Cannot decrement grade: too low!");
+	return ("grade too low!");
 };
 
 const char* Bureaucrat::UnsignedFormException::what() const throw()
