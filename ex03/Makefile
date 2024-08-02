@@ -1,6 +1,6 @@
 NAME = ex03.out
 CXX = c++
-CFLAGS = -Wall -Wextra -Werror -g3 -fsanitize=address -std=c++98
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 SRCS = main.cpp Bureaucrat.cpp AForm.cpp \
 				ShrubberyCreationForm.cpp \
 				RobotomyRequestForm.cpp \
