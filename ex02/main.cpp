@@ -38,6 +38,7 @@ int main()
 		try 
 		{
 			Mori.execute(Hanzaemon);
+			std::cout << "✅ Shruberry created successfully ✅" << std::endl;
 		}
 		catch (std::exception& e)
 		{

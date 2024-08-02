@@ -4,12 +4,12 @@
 
 const char* Intern::InvalidRequest::what() const throw()
 {
-	return ("cannot proceed with this request! Please enter a valid option");
+	return ("Cannot proceed with this request! Please enter a valid option");
 }
 
 Intern::Intern()
 {
-	std::cout << "Intern Default constructor called" << std::endl;
+	std::cout << "Intern constructor called" << std::endl;
 }
 
 Intern::Intern(const Intern& other)
@@ -43,6 +43,51 @@ static AForm* makePresidentialPTR(const std::string& target)
 	return (new PresidentialPardonForm(target));
 }
 
+static const std::string trimmed_lowercase(const std::string str)
+{
+	std::string buffer;
+	std::string trim;
+	int			i;
+	int			k;
+
+	// Step 1 -- remove preceeding white spaces
+	i = 0;
+	while (str[i] && isspace(str[i]))
+		i++;
+	trim = str.substr(i);
+
+	// Step 2 -- remove trailing white spaces
+	i = 0;
+	while (trim[i])
+		i++;
+	i--;
+	k = 0;
+	while (i - k > 0 && isspace(trim[i - k]))
+		k++;
+	trim = trim.substr(0, trim.size() - k);
+	
+	// Step 3 -- substitute all intermediary white spaces with just one space
+	i = 0;
+	while (trim[i])
+	{
+		k = 0;
+		while (trim[i + k] && isspace(trim[i + k]))
+			k++;
+		if (k)
+		{
+			buffer += ' ';
+			i += k;
+		}
+		buffer += trim[i++];
+	}
+
+	// Step 4 -- make every character lowercase
+	for (size_t i = 0; i < buffer.size(); i++)
+		buffer[i] = tolower(buffer[i]);
+
+	return (buffer);
+}
+
 /*
 	Function pointers in C++ are powerful tools that allow for more flexible 
 	and dynamic code. Here are some key reasons for using function pointers:
@@ -66,7 +111,7 @@ AForm*	Intern::makeForm(const std::string form_name, const std::string target)
 	};
 
 	for (int i = 0; i < 3; i++) {
-		if (form_name == func_arr[i].form_name)
+		if (trimmed_lowercase(form_name) == func_arr[i].form_name)
 		{
 			std::cout << "Intern creates " << func_arr[i].form_name <<std::endl;
 			return (func_arr[i].funcptr(target));

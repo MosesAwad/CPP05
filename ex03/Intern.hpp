@@ -11,6 +11,12 @@
 
 class Intern 
 {
+	private:
+		typedef struct s_funcs
+		{
+			const std::string form_name;
+			AForm*	(*funcptr) (const std::string&);
+		} t_funcs;
 	public:
 		class InvalidRequest;
 		Intern();
@@ -18,12 +24,6 @@ class Intern
 		Intern& operator=(const Intern& other);
 		~Intern();
 		AForm*	makeForm(const std::string form_name, const std::string target);
-	private:
-		typedef struct s_funcs
-		{
-			const std::string form_name;
-			AForm*	(*funcptr) (const std::string&);
-		} t_funcs;
 };
 
 class Intern::InvalidRequest : public std::exception
